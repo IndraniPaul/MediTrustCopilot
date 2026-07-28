@@ -260,10 +260,50 @@ metadata.synthetic: true/false
 
 ### Safety Rules for Members 2, 3, and 4
 
-- If `evidence_status` is `insufficient`, Member 2 should not perform unrestricted Gemini generation.
+- Do not call `/retrieve` until unsafe or high-risk input has been blocked or escalated by input governance or risk routing.
+- If `evidence_status` is `insufficient`, Member 2 should continue the backend workflow but must not use Gemini or any LLM to infer, invent, or fill the missing answer.
+- For insufficient evidence, Member 2 should route to `safe_fallback`, `human_escalation`, `audit`, and response-building nodes instead of normal answer generation.
+- A constrained LLM call may only be used to format a pre-approved fallback message if it adds no new facts, no clinical guidance, and no unsupported claims. For the MVP, the safest rule is: insufficient evidence means no Gemini answer generation.
 - If `leakage_detected` is `true`, Member 3 should treat it as a governance failure.
 - Synthetic SOPs have `synthetic: true` and must be displayed as demonstration-only.
 - Returned evidence should be used as context only; the Knowledge Service does not produce clinical advice.
+
+---
+
+### Insufficient Evidence Handling
+
+When `/retrieve` returns `"evidence_status": "insufficient"`, this does not mean Member 2 stops all backend processing. It means Member 2 must not call normal LLM answer generation to fill the evidence gap.
+
+Allowed next steps:
+
+```text
+safe_fallback()
+human_escalation()
+audit()
+analytics_capture()
+trace_update()
+workflow_response_builder()
+```
+
+Not allowed:
+
+```text
+generate_with_gemini() for a normal answer
+asking Gemini to infer missing clinical/policy facts
+asking Gemini to answer from general knowledge
+caching an unsupported generated answer
+```
+
+Recommended safe response shape:
+
+```json
+{
+  "answer": "I could not find sufficient approved evidence to answer this safely. Please consult an authorized clinical or compliance reviewer.",
+  "evidence_status": "insufficient",
+  "requires_human_review": true,
+  "validation_status": "escalate"
+}
+```
 
 ---
 
@@ -453,13 +493,15 @@ Invoke-RestMethod `
 
 Member 2 should use the Knowledge Service in this order:
 
-1. Receive already-screened or risk-classified query.
-2. Call `POST /cache/lookup`.
-3. If `cache_hit` is `true`, send cached answer to Member 3 for validation or revalidation if needed.
-4. If cache miss, call `POST /retrieve`.
-5. If `evidence_status` is `insufficient`, use safe fallback or escalation.
-6. If evidence is sufficient, pass retrieved `results[].text` as context to optimization/generation.
-7. After Member 3 validates the final answer, call `POST /cache/write`.
+1. Receive the user query.
+2. Run input guard and risk classification before any Knowledge Service cache or retrieval call.
+3. If unsafe, high-risk, emergency, patient-specific, dosage, restricted-data, or prompt-injection input is detected, block or escalate and do not call `/cache/lookup` or `/retrieve`.
+4. If the query is allowed, call `POST /cache/lookup`.
+5. If `cache_hit` is `true`, send cached answer to Member 3 for validation or revalidation if needed.
+6. If cache miss, call `POST /retrieve`.
+7. If `evidence_status` is `insufficient`, do not call Gemini for normal answer generation. Route to safe fallback or human escalation, then audit and return a safe response.
+8. If evidence is sufficient, pass retrieved `results[].text` as context to optimization/generation.
+9. After Member 3 validates the final answer, call `POST /cache/write`.
 
 ### Member 3 - Governance Service
 
