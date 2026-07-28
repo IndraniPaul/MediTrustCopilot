@@ -1,0 +1,22 @@
+{
+  "query": "What are safe injection practices?",
+  "role": "pharmacist",
+  "filters": {"status": "active"},
+  "answer": "Use aseptic technique and safe sharps handling. This is not dosage or prescribing guidance.",
+  "citations": [
+    {
+      "document_id": "CDC-INJECTION-006",
+      "title": "CDC Safe Injection Practices",
+      "section": "Safe Injection",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+      "version_date": "2024-04-03",
+      "source_type": "public_guideline",
+      "synthetic": false,
+      "chunk_id": "CDC-INJECTION-006::example",
+      "score": 0.91
+    }
+  ],
+  "validation_status": "pass",
+  "source_versions": {"CDC-INJECTION-006": "2024-04-03"}
+}

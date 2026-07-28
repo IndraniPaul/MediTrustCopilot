@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.venv/
+storage/chroma/*.sqlite3
+storage/chroma/*.json

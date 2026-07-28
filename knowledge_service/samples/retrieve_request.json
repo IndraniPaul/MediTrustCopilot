@@ -1,0 +1,7 @@
+{
+  "query": "When should healthcare workers perform hand hygiene?",
+  "role": "nurse",
+  "top_k": 5,
+  "status": "active",
+  "source_type": "public_guideline"
+}

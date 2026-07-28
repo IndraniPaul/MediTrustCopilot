@@ -1,0 +1,2 @@
+"""MediTrust AI Knowledge Service."""
+

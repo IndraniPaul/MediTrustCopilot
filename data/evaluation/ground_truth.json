@@ -1,0 +1,365 @@
+{
+    "schema_version":  "1.0",
+    "queries":  [
+                    {
+                        "query":  "When should healthcare workers clean their hands?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-HAND-003",
+                                                      "WHO-HAND-007"
+                                                  ]
+                    },
+                    {
+                        "query":  "What are standard precautions for patient care?",
+                        "role":  "doctor",
+                        "expected_document_ids":  [
+                                                      "CDC-STANDARD-002",
+                                                      "CDC-IPC-CORE-001"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which PPE is selected for expected exposure?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-IPC-CORE-001",
+                                                      "CDC-STANDARD-002"
+                                                  ]
+                    },
+                    {
+                        "query":  "How should respiratory hygiene be supported?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "CDC-STANDARD-002"
+                                                  ]
+                    },
+                    {
+                        "query":  "What is the purpose of isolation precautions?",
+                        "role":  "doctor",
+                        "expected_document_ids":  [
+                                                      "CDC-ISOLATION-004"
+                                                  ]
+                    },
+                    {
+                        "query":  "How is reusable equipment handled between patients?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-ISOLATION-004",
+                                                      "CDC-ENV-005"
+                                                  ]
+                    },
+                    {
+                        "query":  "What are basics for environmental cleaning?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-ENV-005"
+                                                  ]
+                    },
+                    {
+                        "query":  "What does safe injection practice include?",
+                        "role":  "pharmacist",
+                        "expected_document_ids":  [
+                                                      "CDC-INJECTION-006"
+                                                  ]
+                    },
+                    {
+                        "query":  "How should sharps be disposed?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-INJECTION-006",
+                                                      "SYN-SOP-016"
+                                                  ]
+                    },
+                    {
+                        "query":  "What does WHO say about hand hygiene implementation?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "WHO-HAND-007"
+                                                  ]
+                    },
+                    {
+                        "query":  "What metrics support hand hygiene research?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "WHO-RESEARCH-008"
+                                                  ]
+                    },
+                    {
+                        "query":  "Is community hand hygiene the same as healthcare worker practice?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "WHO-COMMUNITY-009"
+                                                  ]
+                    },
+                    {
+                        "query":  "How can patients help with hand hygiene?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-PATIENT-HAND-010"
+                                                  ]
+                    },
+                    {
+                        "query":  "What should visitor respiratory symptom screening capture?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-011"
+                                                  ]
+                    },
+                    {
+                        "query":  "How are PPE carts restocked in the demo SOP?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-012"
+                                                  ]
+                    },
+                    {
+                        "query":  "How are hand hygiene audits rounded?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-013"
+                                                  ]
+                    },
+                    {
+                        "query":  "What happens when isolation room signage conflicts?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-014"
+                                                  ]
+                    },
+                    {
+                        "query":  "Who handles medication storage temperature exceptions?",
+                        "role":  "pharmacist",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-015"
+                                                  ]
+                    },
+                    {
+                        "query":  "When should a sharps container be replaced?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-016"
+                                                  ]
+                    },
+                    {
+                        "query":  "What data is in environmental cleaning ticket handoff?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-017"
+                                                  ]
+                    },
+                    {
+                        "query":  "How should public guidance versions be reviewed?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-018"
+                                                  ]
+                    },
+                    {
+                        "query":  "What is logged for fit test appointments?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-019"
+                                                  ]
+                    },
+                    {
+                        "query":  "How are evidence requests triaged?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-020"
+                                                  ]
+                    },
+                    {
+                        "query":  "What does hand hygiene protect against?",
+                        "role":  "doctor",
+                        "expected_document_ids":  [
+                                                      "CDC-HAND-003"
+                                                  ]
+                    },
+                    {
+                        "query":  "When is soap and water preferred?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-IPC-CORE-001",
+                                                      "CDC-HAND-003"
+                                                  ]
+                    },
+                    {
+                        "query":  "What are contact droplet or airborne precautions?",
+                        "role":  "doctor",
+                        "expected_document_ids":  [
+                                                      "CDC-ISOLATION-004"
+                                                  ]
+                    },
+                    {
+                        "query":  "What sources discuss PPE and gowns masks eye protection?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-IPC-CORE-001",
+                                                      "CDC-STANDARD-002"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which document discusses cough etiquette?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "CDC-STANDARD-002"
+                                                  ]
+                    },
+                    {
+                        "query":  "What guidance mentions patient placement?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-STANDARD-002"
+                                                  ]
+                    },
+                    {
+                        "query":  "What document covers high touch surfaces?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "CDC-ENV-005"
+                                                  ]
+                    },
+                    {
+                        "query":  "What does medication preparation safety say about dosage?",
+                        "role":  "pharmacist",
+                        "expected_document_ids":  [
+                                                      "CDC-INJECTION-006"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which source discusses WHO multimodal improvement?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "WHO-HAND-007"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which agenda supports donors and researchers?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "WHO-RESEARCH-008"
+                                                  ]
+                    },
+                    {
+                        "query":  "What non healthcare settings are in WHO community hand hygiene?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "WHO-COMMUNITY-009"
+                                                  ]
+                    },
+                    {
+                        "query":  "What patient education source is plain language?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-PATIENT-HAND-010"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP covers visitor masks and charge nurse alerts?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-011"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP covers par levels and PPE shortages?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-012"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP aggregates hand hygiene opportunities by unit?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-013"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP covers signage and the unit status board?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-014"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP covers refrigerator exceptions?",
+                        "role":  "pharmacist",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-015"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP mentions manufacturer mechanism for sharps?",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-016"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP marks rooms ready after cleaning?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-017"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP invalidates cache after source versions change?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-018"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP covers respirator model and completion status?",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-019"
+                                                  ]
+                    },
+                    {
+                        "query":  "Which demo SOP routes dosage requests to human review?",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-020"
+                                                  ]
+                    },
+                    {
+                        "query":  "Find active public evidence for aseptic task hand hygiene.",
+                        "role":  "doctor",
+                        "expected_document_ids":  [
+                                                      "CDC-IPC-CORE-001",
+                                                      "WHO-HAND-007"
+                                                  ]
+                    },
+                    {
+                        "query":  "Find active public evidence for glove removal hand cleaning.",
+                        "role":  "nurse",
+                        "expected_document_ids":  [
+                                                      "CDC-HAND-003",
+                                                      "CDC-IPC-CORE-001"
+                                                  ]
+                    },
+                    {
+                        "query":  "Find policy evidence about disinfecting patient-care equipment.",
+                        "role":  "compliance_officer",
+                        "expected_document_ids":  [
+                                                      "CDC-ENV-005",
+                                                      "CDC-ISOLATION-004"
+                                                  ]
+                    },
+                    {
+                        "query":  "Find synthetic SOP about supply follow-up for PPE.",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-012"
+                                                  ]
+                    },
+                    {
+                        "query":  "Find synthetic SOP about evidence queue urgency and requester role.",
+                        "role":  "administrator",
+                        "expected_document_ids":  [
+                                                      "SYN-SOP-020"
+                                                  ]
+                    }
+                ]
+}
